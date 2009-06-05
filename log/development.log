@@ -1,0 +1,548 @@
+
+
+Processing InfoController#properties (for 127.0.0.1 at 2007-12-10 15:34:51) [GET]
+  Session ID: a648d7d5d682d31e4320efe20337e443
+  Parameters: {"action"=>"properties", "controller"=>"rails/info"}
+  [4;36;1mSQL (0.000198)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: #42S02Table 'lifemanager_development.schema_info' doesn't exist: SELECT version FROM schema_info[0m
+Completed in 0.13094 (7 reqs/sec) | Rendering: 0.00079 (0%) | DB: 0.00020 (0%) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.000160)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.031251)[0m   [0mCREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000688)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: #42S01Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000396)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTasks (1)
+  [4;35;1mSQL (0.003450)[0m   [0mCREATE TABLE tasks (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `priority_id` int(11) DEFAULT NULL, `order` int(11) DEFAULT NULL, `quadrant_id` int(11) DEFAULT NULL, `due_date` date DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updateed_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000391)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000356)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreatePriorities (2)
+  [4;36;1mSQL (0.002453)[0m   [0;1mCREATE TABLE priorities (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mPriority Columns (0.002947)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000381)[0m   [0mINSERT INTO priorities (`name`) VALUES('Vital')[0m
+  [4;36;1mSQL (0.000761)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000155)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000315)[0m   [0;1mINSERT INTO priorities (`name`) VALUES('Important')[0m
+  [4;35;1mSQL (0.000623)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000204)[0m   [0mINSERT INTO priorities (`name`) VALUES('Trivial')[0m
+  [4;36;1mSQL (0.000702)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000374)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000390)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateQuadrants (3)
+  [4;35;1mSQL (0.002762)[0m   [0mCREATE TABLE quadrants (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mQuadrant Columns (0.002647)[0m   [0;1mSHOW FIELDS FROM quadrants[0m
+  [4;35;1mSQL (0.000187)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000316)[0m   [0;1mINSERT INTO quadrants (`name`) VALUES('Unimportant/Non-urgent')[0m
+  [4;35;1mSQL (0.000732)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000248)[0m   [0mINSERT INTO quadrants (`name`) VALUES('Unimportant/Urgent')[0m
+  [4;36;1mSQL (0.000703)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000154)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000240)[0m   [0;1mINSERT INTO quadrants (`name`) VALUES('Important/Non-urgent')[0m
+  [4;35;1mSQL (0.000776)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000235)[0m   [0mINSERT INTO quadrants (`name`) VALUES('Important/Urgent')[0m
+  [4;36;1mSQL (0.000729)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000375)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000367)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.001162)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002397)[0m   [0;1mSHOW FIELDS FROM priorities[0m
+  [4;35;1mSQL (0.001426)[0m   [0mSHOW KEYS FROM priorities[0m
+  [4;36;1mSQL (0.002131)[0m   [0;1mSHOW FIELDS FROM quadrants[0m
+  [4;35;1mSQL (0.001066)[0m   [0mSHOW KEYS FROM quadrants[0m
+  [4;36;1mSQL (0.002689)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mSQL (0.002895)[0m   [0mSHOW KEYS FROM tasks[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 15:51:16) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mSQL (0.000209)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Load (0.000683)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.14145 (7 reqs/sec) | Rendering: 0.00349 (2%) | DB: 0.00089 (0%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2007-12-10 15:51:20) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mTask Columns (0.003724)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.01596 (62 reqs/sec) | Rendering: 0.00797 (49%) | DB: 0.00372 (23%) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 15:53:44) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+
+
+SyntaxError (/Users/nathan/Sites/rails_apps/lifemanager/config/../app/models/task.rb:2: parse error, unexpected ',', expecting '}'
+  belongs_to {:priority, :quadrant}
+                        ^):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:452:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:464:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:468:in `const_missing'
+    /app/controllers/tasks_controller.rb:5:in `index'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/bin/mongrel_rails:18
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 15:54:21) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+
+
+TypeError ([:priority, :quadrant] is not a symbol):
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations.rb:885:in `define_method'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations.rb:885:in `association_accessor_methods'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations.rb:713:in `belongs_to'
+    /app/models/task.rb:2
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:452:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:464:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:468:in `const_missing'
+    /app/controllers/tasks_controller.rb:5:in `index'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/bin/mongrel_rails:18
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 15:54:30) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+
+
+NoMethodError (undefined method `include?' for :quadrant:Symbol):
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations.rb:686:in `belongs_to'
+    /app/models/task.rb:2
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:452:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:464:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:470:in `const_missing'
+    /app/controllers/tasks_controller.rb:5:in `index'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/bin/mongrel_rails:18
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 15:54:43) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mSQL (0.000199)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Load (0.000660)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.07400 (13 reqs/sec) | Rendering: 0.00328 (4%) | DB: 0.00086 (1%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 15:54:54) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mTask Load (0.000851)[0m   [0;1mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.00715 (139 reqs/sec) | Rendering: 0.00112 (15%) | DB: 0.00085 (11%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 16:02:05) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000819)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.03825 (26 reqs/sec) | Rendering: 0.00128 (3%) | DB: 0.00082 (2%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2007-12-10 16:02:07) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mTask Columns (0.004229)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Load (0.000592)[0m   [0mSELECT * FROM priorities [0m
+  [4;36;1mQuadrant Load (0.000566)[0m   [0;1mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+  [4;35;1mPriority Columns (0.002635)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mQuadrant Columns (0.002306)[0m   [0;1mSHOW FIELDS FROM quadrants[0m
+Completed in 0.07117 (14 reqs/sec) | Rendering: 0.04617 (64%) | DB: 0.01033 (14%) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#create (for 127.0.0.1 at 2007-12-10 16:07:06) [POST]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"commit"=>"Create", "action"=>"create", "task"=>{"updateed_at(4i)"=>"16", "updateed_at(5i)"=>"02", "created_at(1i)"=>"2007", "created_at(2i)"=>"12", "title"=>"Test", "due_date(1i)"=>"2007", "created_at(3i)"=>"10", "order"=>"1", "due_date(2i)"=>"12", "created_at(4i)"=>"16", "priority_id"=>"1", "due_date(3i)"=>"10", "created_at(5i)"=>"02", "updateed_at(1i)"=>"2007", "quadrant_id"=>"1", "updateed_at(2i)"=>"12", "updateed_at(3i)"=>"10"}, "controller"=>"tasks"}
+  [4;35;1mTask Columns (0.003933)[0m   [0mSHOW FIELDS FROM tasks[0m
+  [4;36;1mSQL (0.000205)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000372)[0m   [0mINSERT INTO tasks (`title`, `order`, `updateed_at`, `priority_id`, `due_date`, `quadrant_id`, `created_at`) VALUES('Test', 1, '2007-12-10 16:02:00', 1, '2007-12-10', 1, '2007-12-10 16:02:00')[0m
+  [4;36;1mSQL (0.000760)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3080/tasks/1
+Completed in 0.01636 (61 reqs/sec) | DB: 0.00527 (32%) | 302 Found [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2007-12-10 16:07:06) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+  [4;35;1mTask Columns (0.003318)[0m   [0mSHOW FIELDS FROM tasks[0m
+  [4;36;1mTask Load (0.001020)[0m   [0;1mSELECT * FROM tasks WHERE (tasks.`id` = 1) [0m
+Rendering content_typetext/htmlactionshowlayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.04824 (20 reqs/sec) | Rendering: 0.03816 (79%) | DB: 0.00434 (8%) | 200 OK [http://localhost/tasks/1]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 16:07:09) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000779)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003619)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+Completed in 0.01410 (70 reqs/sec) | Rendering: 0.00491 (34%) | DB: 0.00440 (31%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 16:07:53) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000805)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003934)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.002502)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.000536)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+Completed in 0.05648 (17 reqs/sec) | Rendering: 0.04367 (77%) | DB: 0.00778 (13%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 16:08:00) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000778)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003903)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.003021)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.000544)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.002682)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000565)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.06752 (14 reqs/sec) | Rendering: 0.05128 (75%) | DB: 0.01149 (17%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 16:08:36) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000776)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003621)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.002740)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.000559)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.002346)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000545)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.06309 (15 reqs/sec) | Rendering: 0.04772 (75%) | DB: 0.01059 (16%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-10 16:08:58) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000773)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003863)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.038485)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.000635)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.002470)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000473)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.06685 (14 reqs/sec) | Rendering: 0.01526 (22%) | DB: 0.04670 (69%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-11 15:25:31) [GET]
+  Session ID: 4142bf908814104e20677081baf58a23
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mSQL (0.061865)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Load (0.106116)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.027935)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.003972)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.012122)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.004222)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000595)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.75604 (1 reqs/sec) | Rendering: 0.06574 (8%) | DB: 0.21683 (28%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-15 09:26:48) [GET]
+  Session ID: bf5e0056b494dd2812d786f4a91aae74
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mSQL (0.000221)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Load (0.043924)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003174)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.003461)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.000631)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.027287)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000597)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.27835 (3 reqs/sec) | Rendering: 0.10926 (39%) | DB: 0.07929 (28%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-17 16:08:59) [GET]
+  Session ID: c94946771eb69b78197d0ffcbb5a1dad
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mSQL (0.000200)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Load (0.050594)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003258)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.038711)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.000625)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.027443)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000594)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.32264 (3 reqs/sec) | Rendering: 0.12913 (40%) | DB: 0.12143 (37%) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.000160)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.027352)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000770)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002439)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mSQL (0.001351)[0m   [0;1mSHOW KEYS FROM priorities[0m
+  [4;35;1mSQL (0.001915)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mSQL (0.001262)[0m   [0;1mSHOW KEYS FROM quadrants[0m
+  [4;35;1mSQL (0.002868)[0m   [0mSHOW FIELDS FROM tasks[0m
+  [4;36;1mSQL (0.001092)[0m   [0;1mSHOW KEYS FROM tasks[0m
+  [4;35;1mSQL (0.000191)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.043717)[0m   [0;1mDROP DATABASE IF EXISTS `lifemanager_test`[0m
+  [4;35;1mSQL (0.029583)[0m   [0mCREATE DATABASE `lifemanager_test`[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: #42S02Unknown table 'priorities': DROP TABLE priorities[0m
+  [4;36;1mSQL (0.068608)[0m   [0;1mCREATE TABLE priorities (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: #42S02Unknown table 'quadrants': DROP TABLE quadrants[0m
+  [4;36;1mSQL (0.002308)[0m   [0;1mCREATE TABLE quadrants (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: #42S02Unknown table 'tasks': DROP TABLE tasks[0m
+  [4;36;1mSQL (0.003258)[0m   [0;1mCREATE TABLE tasks (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `priority_id` int(11) DEFAULT NULL, `order` int(11) DEFAULT NULL, `quadrant_id` int(11) DEFAULT NULL, `due_date` date DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updateed_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002205)[0m   [0mCREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000645)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.002192)[0m   [0mSHOW FIELDS FROM schema_info[0m
+  [4;36;1mSQL (0.129436)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000303)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-12-18 15:17:13) [GET]
+  Session ID: 9d32877e5a8d70f359351c7c5a826c18
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/test" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/bin/mongrel_rails:18
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-12-18 15:17:17) [GET]
+  Session ID: 9d32877e5a8d70f359351c7c5a826c18
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/tests" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/bin/mongrel_rails:18
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-18 15:17:28) [GET]
+  Session ID: 9d32877e5a8d70f359351c7c5a826c18
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mTask Load (0.001051)[0m   [0;1mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;35;1mTask Columns (0.003275)[0m   [0mSHOW FIELDS FROM tasks[0m
+  [4;36;1mPriority Columns (0.002181)[0m   [0;1mSHOW FIELDS FROM priorities[0m
+  [4;35;1mPriority Load (0.000515)[0m   [0mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;36;1mQuadrant Columns (0.002575)[0m   [0;1mSHOW FIELDS FROM quadrants[0m
+  [4;35;1mQuadrant Load (0.000531)[0m   [0mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.08680 (11 reqs/sec) | Rendering: 0.06171 (71%) | DB: 0.01043 (12%) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-18 16:59:02) [GET]
+  Session ID: 9b3a8e233542f640faa27e1ba2b0d7d3
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mSQL (0.000316)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Load (0.084871)[0m   [0mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mTask Columns (0.003252)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mPriority Columns (0.031875)[0m   [0mSHOW FIELDS FROM priorities[0m
+  [4;36;1mPriority Load (0.026854)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Columns (0.026535)[0m   [0mSHOW FIELDS FROM quadrants[0m
+  [4;36;1mQuadrant Load (0.000593)[0m   [0;1mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.38893 (2 reqs/sec) | Rendering: 0.13070 (33%) | DB: 0.17430 (44%) | 200 OK [http://localhost/]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2007-12-18 16:59:06) [GET]
+  Session ID: 9b3a8e233542f640faa27e1ba2b0d7d3
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;35;1mTask Columns (0.003678)[0m   [0mSHOW FIELDS FROM tasks[0m
+  [4;36;1mPriority Load (0.000610)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000516)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+  [4;36;1mPriority Columns (0.002482)[0m   [0;1mSHOW FIELDS FROM priorities[0m
+  [4;35;1mQuadrant Columns (0.002282)[0m   [0mSHOW FIELDS FROM quadrants[0m
+Completed in 0.07310 (13 reqs/sec) | Rendering: 0.01943 (26%) | DB: 0.00957 (13%) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#create (for 127.0.0.1 at 2007-12-18 16:59:36) [POST]
+  Session ID: 9b3a8e233542f640faa27e1ba2b0d7d3
+  Parameters: {"commit"=>"Create", "action"=>"create", "task"=>{"updateed_at(4i)"=>"16", "updateed_at(5i)"=>"59", "created_at(1i)"=>"2007", "created_at(2i)"=>"12", "title"=>"Figure out Priorities", "due_date(1i)"=>"2007", "created_at(3i)"=>"18", "order"=>"2", "due_date(2i)"=>"12", "created_at(4i)"=>"16", "priority_id"=>"1", "due_date(3i)"=>"18", "created_at(5i)"=>"59", "updateed_at(1i)"=>"2007", "quadrant_id"=>"4", "updateed_at(2i)"=>"12", "updateed_at(3i)"=>"18"}, "controller"=>"tasks"}
+  [4;36;1mTask Columns (0.003665)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mSQL (0.000283)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.080382)[0m   [0;1mINSERT INTO tasks (`title`, `order`, `updateed_at`, `priority_id`, `due_date`, `quadrant_id`, `created_at`) VALUES('Figure out Priorities', 2, '2007-12-18 16:59:00', 1, '2007-12-18', 4, '2007-12-18 16:59:00')[0m
+  [4;35;1mSQL (0.000990)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3080/tasks/2
+Completed in 0.12646 (7 reqs/sec) | DB: 0.08532 (67%) | 302 Found [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2007-12-18 16:59:36) [GET]
+  Session ID: 9b3a8e233542f640faa27e1ba2b0d7d3
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"tasks"}
+  [4;36;1mTask Columns (0.003772)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mTask Load (0.001061)[0m   [0mSELECT * FROM tasks WHERE (tasks.`id` = 2) [0m
+Rendering content_typetext/htmlactionshowlayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.07237 (13 reqs/sec) | Rendering: 0.06201 (85%) | DB: 0.00483 (6%) | 200 OK [http://localhost/tasks/2]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2007-12-18 16:59:43) [GET]
+  Session ID: 9b3a8e233542f640faa27e1ba2b0d7d3
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mTask Load (0.000837)[0m   [0;1mSELECT * FROM tasks [0m
+Rendering content_typetext/htmlactionindexlayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;35;1mTask Columns (0.003696)[0m   [0mSHOW FIELDS FROM tasks[0m
+  [4;36;1mPriority Columns (0.002167)[0m   [0;1mSHOW FIELDS FROM priorities[0m
+  [4;35;1mPriority Load (0.000500)[0m   [0mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;36;1mQuadrant Columns (0.002780)[0m   [0;1mSHOW FIELDS FROM quadrants[0m
+  [4;35;1mQuadrant Load (0.000619)[0m   [0mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+  [4;36;1mPriority Load (0.000536)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Load (0.000428)[0m   [0mSELECT * FROM quadrants WHERE (quadrants.`id` = 4) [0m
+Completed in 0.06293 (15 reqs/sec) | Rendering: 0.04651 (73%) | DB: 0.01156 (18%) | 200 OK [http://localhost/tasks]

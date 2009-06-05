@@ -1,0 +1,535 @@
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000153)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.000000)[0m   [0mMysql::Error: #42S02Table 'lifemanager_test.tasks' doesn't exist: SHOW FIELDS FROM tasks[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000147)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000147)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000152)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000166)[0m   [0mBEGIN[0m
+  [4;36;1mTask Columns (0.003269)[0m   [0;1mSHOW FIELDS FROM tasks[0m
+  [4;35;1mSQL (0.001941)[0m   [0mSELECT count(*) AS count_all FROM tasks [0m
+
+
+Processing TasksController#create (for 0.0.0.0 at 2007-12-17 16:23:17) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "task"=>{}, "controller"=>"tasks"}
+  [4;36;1mSQL (0.000362)[0m   [0;1mINSERT INTO tasks (`title`, `order`, `updateed_at`, `priority_id`, `due_date`, `quadrant_id`, `created_at`) VALUES(NULL, NULL, NULL, NULL, NULL, NULL, '2007-12-17 16:23:18')[0m
+Redirected to http://test.host/tasks/3
+Completed in 0.00623 (160 reqs/sec) | DB: 0.00600 (96%) | 302 Found [http://test.host/tasks?task=]
+  [4;35;1mSQL (0.000391)[0m   [0mSELECT count(*) AS count_all FROM tasks [0m
+  [4;36;1mSQL (0.028079)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000440)[0m   [0;1mSELECT count(*) AS count_all FROM tasks [0m
+
+
+Processing TasksController#destroy (for 0.0.0.0 at 2007-12-17 16:23:18) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000797)[0m   [0mSELECT * FROM tasks WHERE (tasks.`id` = 1) [0m
+  [4;36;1mTask Destroy (0.000252)[0m   [0;1m DELETE FROM tasks
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/tasks
+Completed in 0.00236 (424 reqs/sec) | DB: 0.03011 (1277%) | 302 Found [http://test.host/tasks/1]
+  [4;35;1mSQL (0.000331)[0m   [0mSELECT count(*) AS count_all FROM tasks [0m
+  [4;36;1mSQL (0.001151)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000350)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#edit (for 0.0.0.0 at 2007-12-17 16:23:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tasks"}
+  [4;36;1mTask Load (0.000973)[0m   [0;1mSELECT * FROM tasks WHERE (tasks.`id` = 1) [0m
+Rendering  within layouts/tasks
+Rendering tasks/edit
+Completed in 0.01034 (96 reqs/sec) | Rendering: 0.00890 (86%) | DB: 0.00280 (27%) | 200 OK [http://test.host/tasks/1;edit]
+  [4;35;1mSQL (0.000246)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000142)[0m   [0;1mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000878)[0m   [0mSELECT * FROM tasks [0m
+Rendering actionindexcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/index
+  [4;36;1mPriority Columns (0.002490)[0m   [0;1mSHOW FIELDS FROM priorities[0m
+  [4;35;1mPriority Load (0.000499)[0m   [0mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;36;1mQuadrant Columns (0.002550)[0m   [0;1mSHOW FIELDS FROM quadrants[0m
+  [4;35;1mQuadrant Load (0.000493)[0m   [0mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+  [4;36;1mPriority Load (0.000410)[0m   [0;1mSELECT * FROM priorities WHERE (priorities.`id` = 1) [0m
+  [4;35;1mQuadrant Load (0.000369)[0m   [0mSELECT * FROM quadrants WHERE (quadrants.`id` = 1) [0m
+Completed in 0.05800 (17 reqs/sec) | Rendering: 0.04967 (85%) | DB: 0.00808 (13%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000201)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000344)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#new (for 0.0.0.0 at 2007-12-17 16:23:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mPriority Load (0.000470)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000444)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.00830 (120 reqs/sec) | Rendering: 0.00665 (80%) | DB: 0.00146 (17%) | 200 OK [http://test.host/tasks/new]
+  [4;36;1mSQL (0.000243)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000134)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+  [4;36;1mTask Load (0.000886)[0m   [0;1mSELECT * FROM tasks WHERE (tasks.`id` = 1) [0m
+Rendering actionshowcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.00556 (179 reqs/sec) | Rendering: 0.00382 (68%) | DB: 0.00126 (22%) | 200 OK [http://test.host/tasks/1]
+  [4;35;1mSQL (0.000241)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mBEGIN[0m
+
+
+Processing TasksController#update (for 0.0.0.0 at 2007-12-17 16:23:18) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "task"=>{}, "controller"=>"tasks"}
+  [4;35;1mTask Load (0.000855)[0m   [0mSELECT * FROM tasks WHERE (tasks.`id` = 1) [0m
+  [4;36;1mTask Update (0.000383)[0m   [0;1mUPDATE tasks SET `created_at` = '2007-12-10 15:38:14', `due_date` = '2007-12-10', `order` = 1, `title` = 'MyString', `updateed_at` = '2007-12-10 15:38:14', `quadrant_id` = 1, `priority_id` = 1 WHERE `id` = 1[0m
+Redirected to http://test.host/tasks/1
+Completed in 0.00499 (200 reqs/sec) | DB: 0.00162 (32%) | 302 Found [http://test.host/tasks/1?task=]
+  [4;35;1mSQL (0.000224)[0m   [0mROLLBACK[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000203)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000108)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#destroy (for 0.0.0.0 at 2007-12-17 16:23:20) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks
+Completed in 0.00138 (726 reqs/sec) | DB: 0.00031 (22%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000140)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000260)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#destroy (for 0.0.0.0 at 2007-12-17 16:23:20) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks
+Completed in 0.00045 (2246 reqs/sec) | DB: 0.00040 (89%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000158)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000096)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#destroy (for 0.0.0.0 at 2007-12-17 16:23:20) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks
+Completed in 0.00040 (2480 reqs/sec) | DB: 0.00025 (62%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000118)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#update (for 0.0.0.0 at 2007-12-17 16:23:20) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"tasks"}
+Rendering actioneditlayoutfalse within layouts/tasks
+Rendering tasks/edit
+Completed in 0.00080 (1254 reqs/sec) | Rendering: 0.00036 (45%) | DB: 0.00021 (26%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000133)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000096)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#update (for 0.0.0.0 at 2007-12-17 16:23:20) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks/1
+Completed in 0.00080 (1253 reqs/sec) | DB: 0.00023 (28%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000171)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000170)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#update (for 0.0.0.0 at 2007-12-17 16:23:20) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks/1
+Completed in 0.00048 (2082 reqs/sec) | DB: 0.00034 (71%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000146)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000101)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#update (for 0.0.0.0 at 2007-12-17 16:23:20) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks/1
+Completed in 0.00046 (2178 reqs/sec) | DB: 0.00025 (53%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000146)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#update (for 0.0.0.0 at 2007-12-17 16:23:20) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"tasks"}
+Redirected to http://test.host/tasks/1
+Completed in 0.00049 (2049 reqs/sec) | DB: 0.00024 (48%) | 302 Found [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000139)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#create (for 0.0.0.0 at 2007-12-17 16:23:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "task"=>{}, "controller"=>"tasks"}
+Rendering actionnewlayoutfalse within layouts/tasks
+Rendering tasks/new
+Completed in 0.00143 (701 reqs/sec) | Rendering: 0.00093 (65%) | DB: 0.00023 (16%) | 200 OK [http://test.host/tasks?task=]
+  [4;36;1mSQL (0.000165)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#create (for 0.0.0.0 at 2007-12-17 16:23:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "task"=>{}, "controller"=>"tasks"}
+Redirected to http://test.host/tasks/1
+Completed in 0.00049 (2054 reqs/sec) | DB: 0.00026 (53%) | 302 Found [http://test.host/tasks?task=]
+  [4;36;1mSQL (0.000124)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#create (for 0.0.0.0 at 2007-12-17 16:23:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "task"=>{}, "controller"=>"tasks"}
+Redirected to http://test.host/tasks/1
+Completed in 0.00060 (1672 reqs/sec) | DB: 0.00022 (36%) | 302 Found [http://test.host/tasks?task=]
+  [4;36;1mSQL (0.000199)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000096)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#edit (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tasks"}
+Rendering  within layouts/tasks
+Rendering tasks/edit
+Completed in 0.00052 (1934 reqs/sec) | Rendering: 0.00031 (59%) | DB: 0.00030 (57%) | 200 OK [http://test.host/tasks/1;edit]
+  [4;36;1mSQL (0.000129)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000384)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#edit (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tasks"}
+Rendering  within layouts/tasks
+Rendering tasks/edit
+Completed in 0.00061 (1626 reqs/sec) | Rendering: 0.00038 (60%) | DB: 0.00051 (83%) | 200 OK [http://test.host/tasks/1;edit]
+  [4;36;1mSQL (0.000176)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000146)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#edit (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tasks"}
+Rendering  within layouts/tasks
+Rendering tasks/edit
+Completed in 0.00051 (1941 reqs/sec) | Rendering: 0.00030 (57%) | DB: 0.00032 (62%) | 200 OK [http://test.host/tasks/1;edit]
+  [4;36;1mSQL (0.000141)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000104)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#edit (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tasks"}
+Rendering  within layouts/tasks
+Rendering tasks/edit
+Completed in 0.00052 (1934 reqs/sec) | Rendering: 0.00033 (64%) | DB: 0.00024 (47%) | 200 OK [http://test.host/tasks/1;edit]
+  [4;36;1mSQL (0.000137)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#new (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mPriority Load (0.000492)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000464)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.00967 (103 reqs/sec) | Rendering: 0.00038 (3%) | DB: 0.00119 (12%) | 200 OK [http://test.host/tasks/new]
+  [4;36;1mSQL (0.000161)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000098)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#new (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mPriority Load (0.000389)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000299)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.00157 (635 reqs/sec) | Rendering: 0.00028 (17%) | DB: 0.00095 (60%) | 200 OK [http://test.host/tasks/new]
+  [4;36;1mSQL (0.000123)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#new (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mPriority Load (0.000347)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000302)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.00150 (665 reqs/sec) | Rendering: 0.00027 (18%) | DB: 0.00087 (57%) | 200 OK [http://test.host/tasks/new]
+  [4;36;1mSQL (0.000123)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#new (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mPriority Load (0.000394)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000299)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.00157 (636 reqs/sec) | Rendering: 0.00028 (17%) | DB: 0.00092 (58%) | 200 OK [http://test.host/tasks/new]
+  [4;36;1mSQL (0.000127)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000140)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#new (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mPriority Load (0.000411)[0m   [0;1mSELECT * FROM priorities [0m
+  [4;35;1mQuadrant Load (0.000268)[0m   [0mSELECT * FROM quadrants [0m
+Rendering  within layouts/tasks
+Rendering tasks/new
+Completed in 0.00171 (585 reqs/sec) | Rendering: 0.00031 (18%) | DB: 0.00095 (55%) | 200 OK [http://test.host/tasks/new]
+  [4;36;1mSQL (0.000150)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Completed in 0.00053 (1879 reqs/sec) | Rendering: 0.00006 (10%) | DB: 0.00025 (46%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000129)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000110)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Completed in 0.00048 (2062 reqs/sec) | Rendering: 0.00005 (10%) | DB: 0.00024 (49%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000116)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000107)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Completed in 0.00058 (1712 reqs/sec) | Rendering: 0.00006 (10%) | DB: 0.00022 (38%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000228)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000107)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Rendering actionshowcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.00081 (1236 reqs/sec) | Rendering: 0.00039 (47%) | DB: 0.00033 (41%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000138)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000094)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Rendering actionshowcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.00080 (1242 reqs/sec) | Rendering: 0.00038 (46%) | DB: 0.00023 (28%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000126)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000104)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Rendering actionshowcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.00074 (1351 reqs/sec) | Rendering: 0.00035 (46%) | DB: 0.00023 (31%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000180)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000179)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#show (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tasks"}
+Rendering actionshowcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/show
+Completed in 0.00073 (1364 reqs/sec) | Rendering: 0.00035 (47%) | DB: 0.00036 (48%) | 200 OK [http://test.host/tasks/1]
+  [4;36;1mSQL (0.000130)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000098)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Completed in 0.00053 (1886 reqs/sec) | Rendering: 0.00006 (10%) | DB: 0.00023 (43%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000148)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000104)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Completed in 0.00079 (1273 reqs/sec) | Rendering: 0.00005 (6%) | DB: 0.00025 (32%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000130)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Completed in 0.00052 (1923 reqs/sec) | Rendering: 0.00005 (10%) | DB: 0.00024 (46%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000130)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Rendering actionindexcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.00075 (1342 reqs/sec) | Rendering: 0.00036 (48%) | DB: 0.00023 (30%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000123)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Rendering actionindexcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.00084 (1190 reqs/sec) | Rendering: 0.00037 (44%) | DB: 0.00022 (25%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000158)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000108)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Rendering actionindexcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.00071 (1406 reqs/sec) | Rendering: 0.00034 (47%) | DB: 0.00027 (37%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000128)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000105)[0m   [0mBEGIN[0m
+
+
+Processing TasksController#index (for 0.0.0.0 at 2007-12-17 16:23:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+Rendering actionindexcontent_typetext/htmllayoutfalse within layouts/tasks
+Rendering tasks/index
+Completed in 0.00077 (1303 reqs/sec) | Rendering: 0.00036 (47%) | DB: 0.00023 (30%) | 200 OK [http://test.host/tasks]
+  [4;36;1mSQL (0.000144)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000107)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000114)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000102)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000105)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000096)[0m   [0mBEGIN[0m
+Rendering /tasks/edit.rhtml
+  [4;36;1mSQL (0.000206)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000121)[0m   [0mBEGIN[0m
+Rendering /tasks/show.rhtml
+  [4;36;1mSQL (0.000198)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000101)[0m   [0mBEGIN[0m
+Rendering /tasks/new.rhtml
+  [4;36;1mSQL (0.000208)[0m   [0;1mROLLBACK[0m
+Rendering /tasks/index.rhtml
+  [4;35;1mTask Columns (0.003757)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000154)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003275)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000164)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003788)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000166)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.002420)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000162)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003185)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000158)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003521)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000160)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003547)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000179)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003599)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000173)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003391)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000162)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003544)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.057514)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.038889)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000159)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003438)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000178)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003632)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000148)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003607)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000158)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003851)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000182)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003519)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000162)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003475)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000171)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003493)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000169)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003675)[0m   [0mSHOW FIELDS FROM tasks[0m
+Spec::Rails::Example::HelperBehaviourController: missing default helper path spec/rails/example/helper_behaviour_helper
+Spec::Rails::Example::ViewExampleGroupController: missing default helper path spec/rails/example/view_example_group_helper
+  [4;36;1mSQL (0.000159)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTask Columns (0.003568)[0m   [0mSHOW FIELDS FROM tasks[0m

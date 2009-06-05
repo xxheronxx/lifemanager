@@ -1,0 +1,370 @@
+Script started on Mon Dec 17 16:14:59 2007
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ svn checkout http:///svn.techno-weenie.net/projects/mephisto/branches/stable-0.7/ mephisto_a[A[K
+[K[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ script/generate s re [Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ script/generate r[K
+[K[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ script/generate rs pec_sa caffold
+Usage: script/generate rspec_scaffold ModelName [field:type field:type]
+
+Options:
+        --skip-migration             Don't generate a migration file for this model
+
+Rails Info:
+    -v, --version                    Show the Rails version number and quit.
+    -h, --help                       Show this help message and quit.
+
+General Options:
+    -p, --pretend                    Run but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -q, --quiet                      Suppress normal output.
+    -t, --backtrace                  Debugging: show backtrace on errors.
+    -c, --svn                        Modify files with subversion. (Note: svn must be in path)
+
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ script/generate rsppec_scaffold t Task :title      title:string priority_id:integer order_  r:integer quadrant_id:int eger due_date:date created_at:timestamp updatee d_at  :  t:timestamp
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/tasks
+      create  spec/controllers/
+      create  spec/models/
+      create  spec/helpers/
+      create  spec/fixtures/
+      create  spec/views/tasks
+      create  spec/controllers/tasks_routing_spec.rb
+      create  spec/controllers/tasks_controller_spec.rb
+overwrite app/controllers/tasks_controller.rb? [Ynaqd] n
+        skip  app/controllers/tasks_controller.rb
+      create  spec/helpers/tasks_helper_spec.rb
+   identical  app/helpers/tasks_helper.rb
+overwrite app/views/tasks/index.rhtml? [Ynaqd] n
+        skip  app/views/tasks/index.rhtml
+overwrite app/views/tasks/show.rhtml? [Ynaqd] n
+        skip  app/views/tasks/show.rhtml
+overwrite app/views/tasks/new.rhtml? [Ynaqd] n
+        skip  app/views/tasks/new.rhtml
+overwrite app/views/tasks/edit.rhtml? [Ynaqd] n
+        skip  app/views/tasks/edit.rhtml
+overwrite app/models/task.rb? [Ynaqd] n
+        skip  app/models/task.rb
+      create  spec/fixtures/tasks.yml
+      create  spec/models/task_spec.rb
+      create  spec/views/tasks/edit.rhtml_spec.rb
+      create  spec/views/tasks/index.rhtml_spec.rb
+      create  spec/views/tasks/new.rhtml_spec.rb
+      create  spec/views/tasks/show.rhtml_spec.rb
+      exists  db/migrate
+Another migration is already named create_tasks: db/migrate/001_create_tasks.rb
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rb  --format specdoc
+/usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/options.rb:216:in `files_to_load': File or directory not found: user_spec.rb (RuntimeError)
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/options.rb:210:in `files_to_load'
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/options.rb:83:in `run_examples'
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/command_line.rb:19:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/bin/spec:3
+	from /usr/local/bin/spec:18
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rb ---format specdoc[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rbb
+[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rb[K
+[K[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rb ---format specdoc[Amputer:~/Sites/rails_apps/lifemanager nathan$ [K
+[K[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ clear
+[H[2Jnathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rb  --format specdoc
+/usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/options.rb:216:in `files_to_load': File or directory not found: user_spec.rb (RuntimeError)
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/options.rb:210:in `files_to_load'
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/options.rb:83:in `run_examples'
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/lib/spec/runner/command_line.rb:19:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/rspec-1.1.0/bin/spec:3
+	from /usr/local/bin/spec:18
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rb ---format specdoc[Anathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec user_spec.rbsuser_spec.rb -[4h-[4l[Ahan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec spuser_spec.rb[4h [4l[Athan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec speuser_spec.r[4hb[4l[Athan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec spec/user_spec[4h.r[4l[Ahan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec spec/muser_spe[4hc[4l[Athan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec spec/mouser_sp[4he[4l[Athan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec spec/models/use[4hr_spe[4l[Agarzas-computer:~/Sites/rails_apps/lifemanager nathan$ spec spec/models/ta[4hsk_spec.rbus[4luser_spec.rb --format specdocuser_spec.rb[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+
+Task
+- should be valid (ERROR - 1)
+
+1)
+ActiveRecord::StatementInvalid in 'Task should be valid'
+Mysql::Error: #42S02Table 'lifemanager_test.tasks' doesn't exist: SHOW FIELDS FROM tasks
+./spec/models/task_spec.rb:5:
+
+Finished in 0.205463 seconds
+
+1 example, 1 failure
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7 to server version: 5.0.27-standard
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+mysql> show databases;
++-------------------------------+
+| Database                      |
++-------------------------------+
+| information_schema            | 
+| ashleafmedia_development      | 
+| ashleafmedia_production       | 
+| blogleaf_development          | 
+| blogleaf_production           | 
+| blogleaf_test                 | 
+| cluff_development             | 
+| cluff_test                    | 
+| garzagang_gallery_development | 
+| garzagang_production          | 
+| gullery_development           | 
+| jornal                        | 
+| leafkeeper_development        | 
+| leafkeeper_production         | 
+| leafkeeper_test               | 
+| lifemanager_development       | 
+| lifemanager_production        | 
+| lifemanager_test              | 
+| listmaster_development        | 
+| listmaster_production         | 
+| listmaster_test               | 
+| mephisto                      | 
+| mephisto_production           | 
+| mysql                         | 
+| portfolio_development         | 
+| portfolio_production          | 
+| portfolio_test                | 
+| radiant2_production           | 
+| radiant_production            | 
+| railslist_development         | 
+| railslist_production          | 
+| railslist_test                | 
+| rjs_development               | 
+| rjs_development2              | 
+| rjs_test                      | 
+| rjs_test2                     | 
+| rspec_learn                   | 
+| rspec_learn_test              | 
+| rspec_tutorial2               | 
+| rspec_tutorial2_test          | 
+| scriptures_development        | 
+| test                          | 
+| test_development              | 
+| testapp_development           | 
+| testapp_production            | 
++-------------------------------+
+45 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ rake
+(in /Users/nathan/Sites/rails_apps/lifemanager)
+/usr/local/bin/ruby -Ilib:test "/usr/local/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader.rb" "test/unit/priority_test.rb" "test/unit/quadrant_test.rb" "test/unit/task_test.rb" 
+Loaded suite /usr/local/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader
+Started
+...
+Finished in 0.047094 seconds.
+
+3 tests, 3 assertions, 0 failures, 0 errors
+/usr/local/bin/ruby -Ilib:test "/usr/local/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader.rb" "test/functional/tasks_controller_test.rb" 
+Loaded suite /usr/local/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader
+Started
+.......
+Finished in 0.190961 seconds.
+
+7 tests, 13 assertions, 0 failures, 0 errors
+/usr/local/bin/ruby -Ilib:test "/usr/local/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader.rb"  
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[35mF[0m[35mF[0m[35mF[0m[35mF[0m[32m.[0m
+
+1)
+[35mActionView::TemplateError in '/tasks/edit.rhtml should render edit form'
+Mock 'Task_1034' received unexpected message :updateed_at with (no args)[0m
+On line #38 of app/views/tasks/edit.rhtml
+
+    35: 
+    36:   <p>
+    37:     <b>Updateed at</b><br />
+    38:     <%= f.datetime_select :updateed_at %>
+    39:   </p>
+    40: 
+    41:   <p>
+
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/error_generator.rb:52:in `__raise'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/error_generator.rb:16:in `raise_unexpected_message_error'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/proxy.rb:80:in `raise_unexpected_message_error'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/mock.rb:29:in `method_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:349:in `value'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:340:in `value'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/date_helper.rb:363:in `date_or_time_select'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/date_helper.rb:356:in `to_datetime_select_tag_without_error_wrapping'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/active_record_helper.rb:211:in `to_datetime_select_tag'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/date_helper.rb:132:in `datetime_select'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/date_helper.rb:425:in `datetime_select'
+    #{RAILS_ROOT}/app/views//tasks/edit.rhtml:38:in `_run_rhtml_47app47views47tasks47edit46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:151:in `fields_for'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:127:in `form_for'
+    #{RAILS_ROOT}/app/views//tasks/edit.rhtml:5:in `_run_rhtml_47app47views47tasks47edit46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:741:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    #{RAILS_ROOT}/vendor/plugins/rspec_on_rails/lib/spec/rails/example/view_example_group.rb:129:in `render'
+    spec/views/tasks/edit.rhtml_spec.rb:19
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:79:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/matchers.rb:144:in `capture_generated_description'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:78:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:19:in `execute'
+    /usr/local/lib/ruby/1.8/timeout.rb:48:in `timeout'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:16:in `execute'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:280:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:279:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:120:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:22:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:21:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/options.rb:87:in `run_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/command_line.rb:19:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/bin/spec:3
+
+2)
+[35mActionView::TemplateError in '/tasks/show.rhtml should render attributes in <p>'
+Mock 'Task_1035' received unexpected message :updateed_at with (no args)[0m
+On line #33 of app/views/tasks/show.rhtml
+
+    30: 
+    31: <p>
+    32:   <b>Updateed at:</b>
+    33:   <%=h @task.updateed_at %>
+    34: </p>
+    35: 
+    36: 
+
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/error_generator.rb:52:in `__raise'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/error_generator.rb:16:in `raise_unexpected_message_error'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/proxy.rb:80:in `raise_unexpected_message_error'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/mock.rb:29:in `method_missing'
+    #{RAILS_ROOT}/app/views//tasks/show.rhtml:33:in `_run_rhtml_47app47views47tasks47show46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:741:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    #{RAILS_ROOT}/vendor/plugins/rspec_on_rails/lib/spec/rails/example/view_example_group.rb:129:in `render'
+    spec/views/tasks/show.rhtml_spec.rb:20
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:79:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/matchers.rb:144:in `capture_generated_description'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:78:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:19:in `execute'
+    /usr/local/lib/ruby/1.8/timeout.rb:48:in `timeout'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:16:in `execute'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:280:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:279:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:120:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:22:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:21:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/options.rb:87:in `run_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/command_line.rb:19:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/bin/spec:3
+
+3)
+[35mActionView::TemplateError in '/tasks/new.rhtml should render new form'
+You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.collect[0m
+On line #13 of app/views/tasks/new.rhtml
+
+    10: 
+    11:   <p>
+    12:     <b>Priority</b><br />
+    13:     <%= select("task", "priority_id", @priorities.collect {|p| [ p.name, p.id ] } ) %>
+    14:   </p>
+    15: 
+    16:   <p>
+
+    #{RAILS_ROOT}/app/views//tasks/new.rhtml:13:in `_run_rhtml_47app47views47tasks47new46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:151:in `fields_for'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_helper.rb:127:in `form_for'
+    #{RAILS_ROOT}/app/views//tasks/new.rhtml:5:in `_run_rhtml_47app47views47tasks47new46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:741:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    #{RAILS_ROOT}/vendor/plugins/rspec_on_rails/lib/spec/rails/example/view_example_group.rb:129:in `render'
+    spec/views/tasks/new.rhtml_spec.rb:20
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:79:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/matchers.rb:144:in `capture_generated_description'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:78:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:19:in `execute'
+    /usr/local/lib/ruby/1.8/timeout.rb:48:in `timeout'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:16:in `execute'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:280:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:279:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:120:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:22:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:21:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/options.rb:87:in `run_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/command_line.rb:19:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/bin/spec:3
+
+4)
+[35mActionView::TemplateError in '/tasks/index.rhtml should render list of tasks'
+Mock 'Task_1037' received unexpected message :priority with (no args)[0m
+On line #14 of app/views/tasks/index.rhtml
+
+    11:   
+    12: <% for task in @tasks %>
+    13:   <tr>
+    14:     <td><%=h task.priority.name %></td>
+    15:     <td><%=h task.order %></td>
+    16:     <td><%=h task.title %></td>
+    17:     <td><%=h task.quadrant.name %></td>
+
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/error_generator.rb:52:in `__raise'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/error_generator.rb:16:in `raise_unexpected_message_error'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/proxy.rb:80:in `raise_unexpected_message_error'
+    #{RAILS_ROOT}/vendor/plugins/rspec/lib/spec/mocks/mock.rb:29:in `method_missing'
+    #{RAILS_ROOT}/app/views//tasks/index.rhtml:14:in `_run_rhtml_47app47views47tasks47index46rhtml'
+    #{RAILS_ROOT}/app/views//tasks/index.rhtml:12:in `_run_rhtml_47app47views47tasks47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:741:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    #{RAILS_ROOT}/vendor/plugins/rspec_on_rails/lib/spec/rails/example/view_example_group.rb:129:in `render'
+    spec/views/tasks/index.rhtml_spec.rb:28
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:79:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/matchers.rb:144:in `capture_generated_description'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:78:in `run_with_description_capturing'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:19:in `execute'
+    /usr/local/lib/ruby/1.8/timeout.rb:48:in `timeout'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_methods.rb:16:in `execute'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:280:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:279:in `execute_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/example/example_group_methods.rb:120:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:22:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/example_group_runner.rb:21:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/options.rb:87:in `run_examples'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib/spec/runner/command_line.rb:19:in `run'
+    /Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/bin/spec:3
+
+Finished in 0.561369 seconds
+
+[31m53 examples, 4 failures[0m
+rake aborted!
+Command ruby -I"/Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/lib" "/Users/nathan/Sites/rails_apps/lifemanager/vendor/plugins/rspec/bin/spec" "spec/controllers/tasks_controller_spec.rb" "spec/controllers/tasks_routing_spec.rb" "spec/helpers/tasks_helper_spec.rb" "spec/models/task_spec.rb" "spec/views/tasks/edit.rhtml_spec.rb" "spec/views/tasks/index.rhtml_spec.rb" "spec/views/tasks/new.rhtml_spec.rb" "spec/views/tasks/show.rhtml_spec.rb" --options "/Users/nathan/Sites/rails_apps/lifemanager/config/../spec/spec.opts" failed
+
+(See full trace by running task with --trace)
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ rakemysql -u root -pspec spec/models/taask_spec.rb --format specdoc
+
+Task
+- should be valid
+
+Finished in 0.095898 seconds
+
+1 example, 0 failures
+nathan-garzas-computer:~/Sites/rails_apps/lifemanager nathan$ 
